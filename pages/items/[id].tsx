@@ -4,13 +4,13 @@ import { useRouter } from 'next/router'
 import ProductsService from '../api/products.service';
 import styles from '../../styles/Items.module.scss'
 import { Col, Row, Button } from 'react-bootstrap';
-import Product from '../../components/Product';
+import { ICategories, IProduct } from '../../interfaces';
 
 const ItemsDetail = () => {
     const router = useRouter()
     const [id, setId] = useState<string>('')
     const productService: ProductsService = new ProductsService()
-    const [productDetail, setProductDetail] = useState({})
+    const [productDetail, setProductDetail] = useState<IProduct>()
     const [categories, setCategories] = useState<string[]>([])
     console.log("🚀 ~ file: [id].tsx ~ line 7 ~ Items ~ id", id)
 
@@ -30,7 +30,7 @@ const ItemsDetail = () => {
                 setProductDetail(product?.product?.item)
                 const categories = await productService.getCategory(product.product?.item?.category_id)
                 if (categories) {
-                    const categorieNames = categories.path_from_root.map(cat => cat.name)
+                    const categorieNames = categories.path_from_root.map((cat: ICategories) => cat.name)
                     setCategories(categorieNames)
                     console.log("🚀 ~ file: [id].tsx ~ line 29 ~ getProductDetailFromService ~ categories", categories)
 
@@ -47,7 +47,7 @@ const ItemsDetail = () => {
     const getIdFromRouter = () => setId(String(router.query.id));
 
     return (
-        <Layout categories={categories} titleTag={productDetail.title} descriptionTag={`Cómpralo en Mercado Libre a ${productDetail?.price?.currency}$ ${productDetail?.price?.amount} - Paga en cuotas sin interés - Envío a todo el país. Encuentra más productos de ${categories[0]}.`} pictureTag={productDetail.picture}>
+        <Layout categories={categories} titleTag={productDetail?.title} descriptionTag={`Cómpralo en Mercado Libre a ${productDetail?.price?.currency}$ ${productDetail?.price?.amount} - Paga en cuotas sin interés - Envío a todo el país. Encuentra más productos de ${categories[0]}.`} pictureTag={productDetail?.picture}>
 
             <Col md={{ span: 10, offset: 1 }} className={styles.homeContainer}>
                 <Row>

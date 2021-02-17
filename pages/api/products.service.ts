@@ -4,7 +4,7 @@ export default class ProductsService {
 
     async getProducts(query: string) {
         try {
-            let data = await axios.get(`http://localhost:8000/api/products/${query}`)
+            let data = await axios.get(`https://mercado-libre-be.herokuapp.com/api/products/${query}`)
             if (data) {
                 return data.data
             }
@@ -16,7 +16,7 @@ export default class ProductsService {
 
     async getProductDetail(id: string) {
         try {
-            let data = await axios.get(`http://localhost:8000/api/products/description/${id}`)
+            let data = await axios.get(`https://mercado-libre-be.herokuapp.com/api/products/description/${id}`)
             if (data) {
                 return data.data
             }

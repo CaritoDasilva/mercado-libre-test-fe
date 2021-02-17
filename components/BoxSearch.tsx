@@ -2,7 +2,6 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import { Button, Form, FormControl, InputGroup, Navbar, Col } from 'react-bootstrap';
 import styles from '../styles/BoxSearch.module.scss';
-import { Props } from './Layout';
 
 
 const BoxSearch = () => {
