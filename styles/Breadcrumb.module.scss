@@ -1,0 +1,13 @@
+.breadcrumContainer {
+    ol {
+        background-color: var(--bg-primary)!important;
+        .bItem {
+            &::before {
+                color: var(--ml-grey);
+            }
+            a {
+                color: var(--ml-grey);        
+            }
+        }
+    }    
+}

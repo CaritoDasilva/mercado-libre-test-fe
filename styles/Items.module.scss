@@ -1,0 +1,44 @@
+.homeContainer {
+    background-color: var(--white);
+    padding-bottom: 32px;
+    .pictureProduct {
+        img {
+            width: 680px;
+            height: 680px;
+            max-width: 100%;
+            margin: 2% 5% 7%;
+            @media (min-width: 320px) and (max-width: 767px) {
+                margin: 3% 0;
+            }
+        }
+    }
+    .producDetailContainer {
+        color: var(--title-text);
+        p {
+            font-size: 14px;
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+        h2 {
+            font-size: 24px;
+        }
+        h1 {
+            font-size: 46px;
+            margin: 32px 0;
+        }
+        .btnBuy {
+            width: 100%;
+            margin-right: 32px;
+        }
+    }
+    .productDescriptionContainer {
+        h1 {
+            margin: 32px;
+        }
+        p {
+            margin-bottom: 32px;
+            margin-left: 32px;
+            color: var(--ml-grey);
+        }
+    }
+}

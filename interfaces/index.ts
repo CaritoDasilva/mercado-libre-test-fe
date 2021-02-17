@@ -8,3 +8,19 @@ export type User = {
   id: number
   name: string
 }
+
+export interface IProduct {
+  id: string;
+  title: string;
+  picture: string;
+  price: IPrice;
+  city: string;
+  condition: string;
+  free_shipping: boolean;
+}
+
+export interface IPrice {
+  amount: number;
+  currency: string;
+  decimals: number;
+}

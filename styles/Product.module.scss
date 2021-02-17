@@ -1,0 +1,25 @@
+.linkContainer {
+    cursor: pointer;
+    .productPicture {
+        width: 180px;
+        height: 180px;
+        border-radius: 4px;
+        margin: 16px;
+    }
+    
+    .pCity {
+        text-align: center;
+        font-size: 12px;
+        margin-top: 32px;
+    }
+    
+    .priceText {
+        font-size: 24px;
+        margin-bottom: 32px;
+        margin-top: 16px;
+    }
+    
+    .titleText {
+        font-size: 18px;
+    }
+}

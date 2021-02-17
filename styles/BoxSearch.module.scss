@@ -1,0 +1,36 @@
+
+
+.boxSearchContainer {
+    nav {
+        background-color: var(--ml-yellow);
+    }
+    form {
+        .iconContainer {
+            display: flex;
+            justify-content: flex-end;
+            @media (min-width: 320px) and (max-width: 767px) {
+                width: 20%;;
+            }
+        }
+
+        input.searchBoxInput {
+            border: none;
+            height: 37px;
+            &::placeholder {
+                color: #999999;
+            }
+            @media (min-width: 320px) and (max-width: 767px) {
+                width: 80%;;
+            }
+        }
+        input.searchBoxInput:focus, .searchBtn:focus, input.searchBoxInput:active, .searchBtn:active {
+            box-shadow: 0 0 0 rgb(255, 255, 255);
+        }
+        .searchBtn {        
+            border: none;
+            background-color: var(--bg-primary);
+            height: 37px;
+    
+        }
+    }
+}
