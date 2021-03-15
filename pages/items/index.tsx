@@ -13,7 +13,6 @@ const ItemsDashboard = () => {
     const productService: ProductsService = new ProductsService()
     const [products, setProducts] = useState<IProduct[]>([])
     const search: string = String(router.query.search);
-    console.log("🚀 ~ file: index.tsx ~ line 75 ~ ItemsDashboard ~ router", router.query)
 
     useEffect(() => {
         if (search) getProductsFromService()
@@ -23,7 +22,6 @@ const ItemsDashboard = () => {
         try {
             const results = await productService.getProducts(search)
             if (results) {
-                console.log("🚀 ~ file: index.tsx ~ line 19 ~ getProductsFromService ~ results", results)
                 setCategories(results.products?.categories);
                 setProducts(results.products?.items);
                 return results;
